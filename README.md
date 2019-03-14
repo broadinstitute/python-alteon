@@ -1,6 +1,6 @@
 # pyalteon
 
-This library provides a [Python][1] interface to the Radware Alteon REST API.  python-alteon is open sourced under the [BSD 3-Clause license](LICENSE.txt).
+This library provides a [Python][1] interface to the [Radware][2] [Alteon][6] REST API.  python-alteon is open sourced under the [BSD 3-Clause license](LICENSE.txt).
 
 [![Build Status](https://img.shields.io/travis/broadinstitute/python-alteon/master.svg)](https://travis-ci.org/broadinstitute/python-alteon)
 [![CircleCI](https://circleci.com/gh/broadinstitute/python-alteon/tree/master.svg?style=svg)](https://circleci.com/gh/broadinstitute/python-alteon/tree/master)
@@ -51,6 +51,8 @@ To start a development environment, you should be able to just run the `dev.sh` 
 The first time you run the script, it should build the [Docker][4] image and then drop you into the container's shell.  The directory where you cloned this repository should be volume mounted in to `/usr/src`, which should also be the current working directory.  From there, you can make changes as you see fit.  Tests can be run from the `/usr/src` directory by simply typing `green` as [green][5] has been setup to with the correct parameters.
 
 [1]: https://www.python.org/ "Python"
+[2]: https://www.radware.com/ "Radware"
 [3]: https://pipenv.readthedocs.io/en/latest/ "Pipenv"
 [4]: https://www.docker.com/ "Docker"
 [5]: https://github.com/CleanCut/green "green"
+[6]: https://www.radware.com/products/alteon/ "Alteon"
