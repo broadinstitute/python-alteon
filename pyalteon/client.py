@@ -124,7 +124,6 @@ class Client(object):
         :return obj: A requests.Response object received as a response
         """
         result = self.__session.get(url, auth=self.__authstring, verify=self.__verify_ssl, headers=headers)
-
         # Raise an exception if the return code is in an error range
         if result.status_code > 299:
             raise HttpError(result)
