@@ -37,13 +37,13 @@ class Group(Endpoint):
         data = self._get_endpoint(endpoint)
 
         # JSON returned has a top-level key that is the name of the endpoint, so return the list under that.
-        self._reals = data[endpoint]
+        self._reals = data
 
         return self._reals
 
     @property
     def all_combined(self):
-        """Compbine the groups list and the real server linking data into one dictionary."""
+        """Combine the groups list and the real server linking data into one dictionary."""
         # Create a deepcopy of all the groups so we can modify the dictionaries in the list
         groups = deepcopy(self.all)
         servers = self.servers
