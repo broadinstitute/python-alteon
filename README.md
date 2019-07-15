@@ -2,7 +2,6 @@
 
 This library provides a [Python][1] interface to the [Radware][2] [Alteon][6] REST API.  python-alteon is open sourced under the [BSD 3-Clause license](LICENSE.txt).
 
-[![Build Status](https://img.shields.io/travis/broadinstitute/python-alteon/master.svg)](https://travis-ci.org/broadinstitute/python-alteon)
 [![CircleCI](https://circleci.com/gh/broadinstitute/python-alteon/tree/master.svg?style=svg)](https://circleci.com/gh/broadinstitute/python-alteon/tree/master)
 [![codecov](https://codecov.io/gh/broadinstitute/python-alteon/branch/master/graph/badge.svg)](https://codecov.io/gh/broadinstitute/python-alteon)
 
