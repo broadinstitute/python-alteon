@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Keep track of the version for the pyalteon module."""
 
 __title__ = "pyalteon"

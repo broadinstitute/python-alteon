@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Define helper functions used by classes in this module."""
 
 from functools import wraps
@@ -101,7 +102,7 @@ class HttpError(Exception):
         message = "%s: %s" % (self.__result.status_code, msg)
 
         # Call the base class constructor with the parameters it needs
-        super(HttpError, self).__init__(message)
+        super().__init__(message)
 
     @property
     def http_result(self):

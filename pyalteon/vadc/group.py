@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Define the pyalteon.vadc.group.Group class."""
 
 from copy import deepcopy
@@ -16,7 +17,7 @@ class Group(Endpoint):
 
         :param object client: An instantiated pyalteon.Client object
         """
-        super(Group, self).__init__(client=client)
+        super().__init__(client=client)
 
         self._reals = None
 

@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 """Define the pyalteon.client.Client class."""
+# pylint: disable=import-error
 
 import logging
 import sys

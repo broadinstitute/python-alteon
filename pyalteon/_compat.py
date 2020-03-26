@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
 """Create a compatibility layer between Python 2 and 3."""
 # pylint: disable=unused-import
 # pylint: disable=no-name-in-module
+# pylint: disable=import-error
 
 import sys
 
