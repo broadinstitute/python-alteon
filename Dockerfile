@@ -1,17 +1,19 @@
-FROM python:3.6-alpine
+FROM python:3.8-slim
 
-COPY Pipfile* /usr/src/
+COPY poetry.lock pyproject.toml README.md /working/
 
-WORKDIR /usr/src
+WORKDIR /working
 
-RUN apk update \
-    && apk add bash \
-    && pip install pipenv==2018.11.26 --upgrade \
-    && pipenv install --dev --system \
+RUN apt-get update \
+    && apt-get upgrade -yq \
+    && pip install pip poetry --upgrade \
     && rm -f /etc/localtime \
     && ln -s /usr/share/zoneinfo/America/New_York /etc/localtime \
+    && poetry install \
     && rm -rf /tmp/* \
-    && rm -rf /var/cache/apk/* \
+    && rm -rf /var/cache/apt/* \
     && rm -rf /var/tmp/*
 
-CMD ["bash", "-l"]
+ENTRYPOINT ["poetry", "run"]
+
+CMD ["bash"]
