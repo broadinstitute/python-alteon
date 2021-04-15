@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Define the pyalteon.vx.vadc.VADC class."""
 
 import logging
@@ -15,7 +16,7 @@ class VADC(Endpoint):
 
         :param object client: An instantiated pyalteon.Client object
         """
-        super(VADC, self).__init__(client=client)
+        super().__init__(client=client)
 
         self._network = None
         self._system = None

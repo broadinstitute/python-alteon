@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Define the pyalteon.vadc.real.Real class."""
 
 import logging
@@ -15,7 +16,7 @@ class Real(Endpoint):
 
         :param object client: An instantiated pyalteon.Client object
         """
-        super(Real, self).__init__(client=client)
+        super().__init__(client=client)
 
         self._combined = None
 

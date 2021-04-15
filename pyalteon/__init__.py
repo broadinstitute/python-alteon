@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Initialize the pyalteon module."""
 
 from .client import Client

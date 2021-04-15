@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Define the pyalteon._endpoint.Endpoint base class."""
 
 import logging
@@ -5,7 +6,7 @@ import logging
 LOGGER = logging.getLogger(__name__)
 
 
-class Endpoint(object):
+class Endpoint(object):  # pylint: disable=too-few-public-methods
     """Act as a superclass for all Radware Alteon REST API endpoints."""
 
     def __init__(self, client):

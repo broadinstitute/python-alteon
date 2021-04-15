@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Define the pyalteon.vadc.virt.Virt class."""
 
 import logging
@@ -15,7 +16,7 @@ class Virt(Endpoint):
 
         :param object client: An instantiated pyalteon.Client object
         """
-        super(Virt, self).__init__(client=client)
+        super().__init__(client=client)
 
         self._combined = None
 
