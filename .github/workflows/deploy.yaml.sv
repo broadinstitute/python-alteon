@@ -1,10 +1,10 @@
 ---
-name: 'test_deploy'
+name: 'deploy'
 
 'on':
   push:
-    branches:
-      - 'main'
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
   pypi_deploy:
@@ -32,13 +32,11 @@ jobs:
 
       - name: 'Setup PyPi credential'
         env:
-          PYPI_TOKEN: ${{ secrets.PYPI_TEST_TOKEN }}
-        run: |
-          poetry config repositories.testpypi https://test.pypi.org/legacy/
-          poetry config pypi-token.testpypi "$PYPI_TOKEN"
+          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+        run: 'poetry config pypi-token.pypi "$PYPI_TOKEN"'
 
       - name: 'Package build'
         run: 'poetry build'
 
       - name: 'Publish package to PyPi'
-        run: 'poetry publish --dry-run -r testpypi'
+        run: 'poetry publish'

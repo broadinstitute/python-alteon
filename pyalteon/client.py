@@ -75,7 +75,7 @@ class Client(object):
         """Return a user-agent string including the module version and Python version."""
         ver_info = list(map(str, sys.version_info))
         pyver = ".".join(ver_info[:3])
-        useragent = "pyalteon/%s (Python %s)" % (__version__.__version__, pyver)
+        useragent = f"pyalteon/{__version__.__version__} (Python {pyver})"
 
         return useragent
 

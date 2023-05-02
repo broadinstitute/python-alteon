@@ -19,6 +19,7 @@ def traffic_log(traffic_logger=None, method="GET"):
     :param obj traffic_logger: a logging.Logger to use for logging messages.
     :param str method: The HTTP method being used, to be noted in the logging. (Default: "GET")
     """
+    # pylint: disable=too-many-branches
     def decorator(func):
         """Wrap the actual decorator so a reference to the function can be returned."""
         @wraps(func)
@@ -46,20 +47,20 @@ def traffic_log(traffic_logger=None, method="GET"):
 
             # Print out before messages with URL and header data
             if url:
-                traffic_logger.debug("Performing a %s on url: %s" % (method, url))
+                traffic_logger.debug(f"Performing a {method} on url: {url}")
             if headers:
-                traffic_logger.debug("Extra request headers: %s" % headers)
+                traffic_logger.debug(f"Extra request headers: {headers}")
             if data:
-                traffic_logger.debug("Data: %s" % data)
+                traffic_logger.debug(f"Data: {data}")
 
             # Run the wrapped function
             try:
                 result = func(*args, **kwargs)
             except HttpError as herr:
                 # If it's of type HttpError, we can still usually get the result data
-                traffic_logger.debug("Result code: %s" % herr.http_result.status_code)
-                traffic_logger.debug("Result headers: %s" % herr.http_result.headers)
-                traffic_logger.debug("Text result: %s" % herr.http_result.text)
+                traffic_logger.debug(f"Result code: {herr.http_result.status_code}")
+                traffic_logger.debug(f"Result headers: {herr.http_result.headers}")
+                traffic_logger.debug(f"Text result: {herr.http_result.text}")
 
                 # Re-raise the original exception
                 raise herr
@@ -69,9 +70,9 @@ def traffic_log(traffic_logger=None, method="GET"):
 
             # If everything went fine, more logging
             if result:
-                traffic_logger.debug("Result code: %s" % result.status_code)
-                traffic_logger.debug("Result headers: %s" % result.headers)
-                traffic_logger.debug("Text result: %s" % result.text)
+                traffic_logger.debug(f"Result code: {result.status_code}")
+                traffic_logger.debug(f"Result headers: {result.headers}")
+                traffic_logger.debug(f"Text result: {result.text}")
             return result
         return log_traffic
     return decorator
@@ -99,7 +100,7 @@ class HttpError(Exception):
         if "description" in data:
             msg = unquote(data["description"])
 
-        message = "%s: %s" % (self.__result.status_code, msg)
+        message = f"{self.__result.status_code}s: {msg}"
 
         # Call the base class constructor with the parameters it needs
         super().__init__(message)

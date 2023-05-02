@@ -14,20 +14,20 @@ homepage = "https://github.com/broadinstitute/python-alteon.git"
 keywords = ["radware", "alteon"]
 
 [tool.poetry.dependencies]
-python = "^3.6"  # Compatible python versions must be declared here
+python = "^3.7"  # Compatible python versions must be declared here
 
 requests = "*"
 toml = "^0.9"
 
 [tool.poetry.dev-dependencies]
 bump2version = "*"
-codecov = "*"
 coverage = "*"
 fixtures = "*"
-flake8 = "*"
 green = ">=2.12.0"
 mock = ">=2.0.0"
-pydocstyle = "<4"
+pydocstyle = "<7"
+# 2.5.0 breaks pylama 8.3.8
+pyflakes = "< 2.5.0"
 pylama = "*"
 pylint = "*"
 responses = "*"
