@@ -25,7 +25,7 @@ class Virt(Endpoint):
         """Build an index name based on the index passed."""
         # This API is gross!!
         index_names = ["", "SecondPart", "ThirdPart", "FourthPart", "FifthPart", "SixthPart", "SeventhPart"]
-        idx = "%sIndex" % index_names[index]
+        idx = f"{index_names[index]}Index"
 
         return idx
 
